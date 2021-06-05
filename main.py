@@ -1,13 +1,17 @@
 import os
 import sys
 import telegram
-import logging
+import json
 import requests
 import time
 import mutagen
 from mutagen.mp3 import MP3
 from mutagen.mp4 import MP4
 from telegram.ext import Updater, MessageHandler, Filters, Handler
+import logging
+logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                     level=logging.INFO)
+
 
 TOKEN = os.environ.get('BOT_TOKEN')
 
