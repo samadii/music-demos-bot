@@ -7,7 +7,7 @@ import time
 import mutagen
 from mutagen.mp3 import MP3
 from mutagen.mp4 import MP4
-from telegram.ext import Updater, Bot, MessageHandler, Filters, Handler
+from telegram.ext import Updater, MessageHandler, Filters, Handler
 
 TOKEN = os.environ.get('BOT_TOKEN')
 
@@ -34,3 +34,12 @@ def handle(bot):
             sendVoice(update.effective_message.chat_id, "temp/output.ogg","")
         except:
             pass
+
+
+def sendVoice(chat_id,file_name,text):
+    url = "https://api.telegram.org/bot%s/sendVoice"%(TOKEN)
+    files = {'voice': open(file_name, 'rb')}
+    data = {'chat_id' : chat_id, 'caption' : text}
+    r= requests.post(url, files=files, data=data)
+    print(r.status_code, r.reason, r.content)
+
