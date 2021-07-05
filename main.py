@@ -173,6 +173,11 @@ def handle(bot):
                             sendVoice(update.effective_message.chat_id, "temp/output.ogg","")
                         except:
                             pass
+                    if update.effective_message["text"].startswith("/start"):
+                        try:
+                            bot.sendMessage(chat_id, "You don't have permission to do that.", reply_to_message_id=update.effective_message.message_id)
+                        except:
+                            pass
 
 def sendVoice(chat_id,file_name,text):
     url = "https://api.telegram.org/bot%s/sendVoice"%(TOKEN)
