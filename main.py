@@ -145,7 +145,7 @@ def handle(bot):
                     if update.effective_message.text:
                         if "start" in update.effective_message['text']:
                             try:
-                                bot.sendMessage(chat_id, "You don't have pe", reply_to_message_id=update.effective_message.message_id)
+                                bot.sendMessage(chat_id, "Hi, I'm a simple Audio Cutter Bot, I can send you a short piece of musics, The cut piece will be in the form of an voice message.", reply_to_message_id=update.effective_message.message_id)
                             except:
                                 pass
                     if update.effective_message.audio and isenabled(chat_id, "voice"):
