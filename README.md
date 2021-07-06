@@ -1,3 +1,7 @@
+# music demos bot
+
+A simple Telegram audio cutter bot that sends a short piece of musics in the form of an voice message.
+
 
 ## Deploy to Heroku
 
