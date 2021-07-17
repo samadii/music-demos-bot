@@ -146,7 +146,7 @@ def handle(bot):
                         if "start" in update.effective_message['text']:
                             markup = InlineKeyboardMarkup([InlineKeyboardButton("📬 Share", url='https://github.com/nertflix/button-creator-bot')])
                             try:
-                                bot.send_message(chat_id, "Hey !  I am a simple Audio Cutter Bot !  I can send you a short piece of musics, The cut piece will be in the form of an voice message.", reply_to_message_id = update.effective_message.message_id, reply_markup = markup)
+                                bot.send_message(chat_id, "Hey !  I am a simple Audio Cutter Bot !  I can send you a short piece of musics, The cut piece will be in the form of an voice message.", reply_to_message_id=update.effective_message.message_id, reply_markup=markup)
                             except:
                                 pass
                     if update.effective_message.audio and isenabled(chat_id, "voice"):
